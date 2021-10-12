@@ -1,56 +1,40 @@
 ## Texas Advanced Computing Center
-# Django CMS Plugin: "Plugin Name"
+# Django CMS Plugin: "Data List"
 
-This plugin [does something].
+This plugin renders a data dictionary as `<table>` or `<dl>`.
 
-- __`__plugin_name__`__: `taccsite_example`
-- __`__PluginName__`__: `TaccsiteExample`
-- __"Plugin Name"__: "Example"
-
-## For Plugin Developer
-
-After cloning this repository for your plugin:
-
-1. Follow https://github.com/tacc-wbomar/Core-CMS-Plugin/wiki/Core-CMS-Plugin-Development-Quick-Start.
-2. Remove this section from your repository's `README.md`.
-
+- __`__plugin_name__`__: `taccsite_data_list`
+- __`__PluginName__`__: `TaccsiteDataList`
+- __"Plugin Name"__: "Data List"
 
 ## Quick Start
 
 1. Follow https://github.com/tacc-wbomar/Core-CMS-Plugin/wiki/Core-CMS-Plugin-Usage-Quick-Start.
 
-> The next steps are sample steps that should be replaced with plugin-specific steps, if any.
-
-2. Any step that is specific to the plugin, such as the steps after this.
-
-    ```
-    # provide minimal example code that may help the reader
-    ```
-
-3. Add a URLconf in your Django project's `urls.py` like this:
-
-    ```
-        url(r'^sysmon/', include('__plugin_name__.urls')),
-    ```
-
-4. Add `__plugin_name_some_prop__` property and value to your Django project's settings:
-
-    ```
-    __plugin_name_some_prop__ = 'specific_value'
-    ```
-
-5. Visit [http://your.project.url.host/some_plugin_url_path/](http://127.0.0.1:8000/ "The URL for your environment may be different than this.").
-
 ## Usage
 
-> This section is sample usage steps that should be replaced with plugin-specific steps, or be removed.
-
-1. Add instance of plugin to a page.
+1. Add instance of "Data List" plugin to a page.
 1. Configure the plugin instance.
-1. See plugin render content that matches configuration.
+1. Add and nest instance(s) of "Data List Item" plugin (key/value pair).
+    - (Optional) Add and nest instance of supported plugin for extra feature.
+        <details>
+
+        | feature | supported by |
+        | :- | :- |
+        | item key as hyperlink | [`taccsite_data_list`][dcms-link] |
+
+        </details>
+1. See plugin render content that matches configuration and nested plugin instances.
+
+[dcms-link]: https://github.com/django-cms/djangocms-link
 
 ## Features
 
-> This section should describe the feature of the plugin or be removed.
+1. Render a list/dictionary of data as `<table>` or `<dl>`.
+1. Render a key (of an key/value pair a.k.a. item) as text or a hyperlink.
 
-…
+## Caveats
+
+- The provided styles are only a sample and are not suitable for all designs.
+
+  _Your app should override the template or stylesheet to load its own styles._

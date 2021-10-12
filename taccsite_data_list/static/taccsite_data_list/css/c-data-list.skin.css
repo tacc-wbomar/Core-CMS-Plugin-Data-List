@@ -1,0 +1,189 @@
+/*
+Data List (Skin)
+
+Opinionated styling of a "Data List".
+
+Features:
+- Narrow layouts have minimal spacing. Wide layouts have extra spacing.
+- All layouts truncate keys. Some layouts truncate values.
+*/
+/* SEE: ./c-data-list.structure.css */
+
+
+
+
+
+/* Base i.e. Container */
+
+table.c-data-list {
+  border-left: 0;
+  border-right: 0;
+}
+
+
+
+
+
+/* Elements i.e. Children */
+
+/* To truncate text of keys */
+.c-data-list__key {
+  text-overflow: var(--text-overflow, ellipsis);
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+@supports(text-overflow: ':') {
+  .c-data-list__key:not(th) {
+    --text-overflow: ':';
+  }
+}
+
+/* To space out elements (tables) */
+th.c-data-list__key,
+td.c-data-list__value {
+  padding-block: 0.5em;
+}
+
+/* To add space (instead of colon) (tables) */
+th.c-data-list__key {
+  padding-right: 0.25em;
+}
+
+
+
+
+/* Modifiers i.e. Types */
+/* FAQ: The `:not(table)` selectors avoid nesting caveats by using `>` */
+
+
+
+/* Horizontal */
+
+dl.c-data-list--is-horz,
+.c-data-list--is-horz dd.c-data-list__value {
+  margin-bottom: 0; /* overwrite Bootstrap's `_reboot.scss` */
+}
+
+/* To space out key and value (non-tables) */
+.c-data-list--is-horz:not(table).c-data-list--is-narrow
+  > .c-data-list__key ~ .c-data-list__key::before {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.c-data-list--is-horz:not(table).c-data-list--is-wide
+  > .c-data-list__key ~ .c-data-list__key::before {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* To space out key and value (tables) */
+table.c-data-list--is-horz.c-data-list--is-narrow
+  tr:not(:first-child) th.c-data-list__key {
+  padding-left: 0.5em;
+}
+table.c-data-list--is-horz.c-data-list--is-narrow
+  td.c-data-list__value {
+  margin-right: 0.5em; /* use margin because text would show through padding */
+}
+table.c-data-list--is-horz.c-data-list--is-wide
+  tr:not(:first-child) th.c-data-list__key {
+  padding-left: 1em;
+}
+table.c-data-list--is-horz.c-data-list--is-wide
+  td.c-data-list__value {
+  margin-right: 1em; /* use margin because text would show through padding */
+}
+
+
+
+/* Vertical */
+
+/* To overwrite Bootstrap `_reboot.scss` */
+.c-data-list--is-vert:not(table) > .c-data-list__value {
+  margin-left: 0;
+}
+
+/* To space out key and value (tables) */
+.c-data-list--is-vert:not(table).c-data-list--is-narrow > .c-data-list__value,
+table.c-data-list--is-vert.c-data-list--is-narrow td.c-data-list__value {
+  padding-left: 0;
+}
+.c-data-list--is-vert:not(table).c-data-list--is-wide > .c-data-list__value,
+table.c-data-list--is-vert.c-data-list--is-wide td.c-data-list__value {
+  padding-left: 2.5em; /* font-size 10px gives 40px (Firefox default margin) */
+}
+
+
+
+
+
+/* Edge Cases */
+
+
+
+/* Element Borders */
+
+/* To remove most borders (tables) */
+table.c-data-list--is-vert th.c-data-list__key,
+td.c-data-list__value {
+  border-left: 0;
+  border-right: 0;
+}
+table.c-data-list--is-horz th.c-data-list__key,
+table.c-data-list--is-horz td.c-data-list__value {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+/* To keep real border between key and value (tables) */
+/* CAVEAT: Certain fonts may limit border height (see "Font Alignment") */
+table.c-data-list--is-horz tr:first-child th.c-data-list__key {
+  border-left: 0;
+}
+table.c-data-list--is-horz th.c-data-list__key {
+  border-right: 0;
+}
+
+/* To add fake border between key and value (non-tables) */
+.c-data-list--is-horz:not(table)
+  > .c-data-list__key ~ .c-data-list__key::before {
+  content: '|';
+  display: inline-block;
+}
+
+
+
+/* Truncate Values */
+/* FAQ: Truncate when doing is unlikely to almost entirely obscure text */
+
+.c-data-list--should-truncate-values .c-data-list__value {
+  text-overflow: var(--text-overflow, ellipsis);
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+
+/* Font Alignment */
+/* WARNING: Some font has a different internal baseline per weight, like:
+            - "Benton Sans" (as of 2021-07)
+            You may try the following styles in your own app to fix that.
+*/
+
+/* NOTE: This assumes key and value are flex items, not inline display */
+/*
+.c-data-list--is-horz:not(table) { align-items: baseline; }
+*/
+
+/* CAVEAT: On Firefox (for "Benton Sans"), `align-items` is ineffectual */
+/* CAVEAT: This causes <th> and <td> cell borders to be offset */
+/*
+table.c-data-list--is-horz tr { align-items: baseline; }
+*/
+
+/* NOTE: This assumes key and value are inline display, not flex items */
+/*
+table.c-data-list--is-vert th.c-data-list__key,
+table.c-data-list--is-vert td.c-data-list__value { vertical-align: baseline; }
+*/
