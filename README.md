@@ -16,14 +16,7 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 1. Add instance of "Data List" plugin to a page.
 1. Configure the plugin instance.
 1. Add and nest instance(s) of "Data List Item" plugin (key/value pair).
-    - (Optional) Add and nest instance of supported plugin for extra feature.
-        <details>
-
-        | feature | supported by |
-        | :- | :- |
-        | item key as hyperlink | [`taccsite_data_list`][dcms-link] |
-
-        </details>
+1. (Optional) Add and nest plugin instances for extra feature.
 1. See plugin render content that matches configuration and nested plugin instances.
 
 [dcms-link]: https://github.com/django-cms/djangocms-link
@@ -31,7 +24,14 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 ## Features
 
 1. Render a list/dictionary of data as `<table>` or `<dl>`.
-1. Render a key (of an key/value pair a.k.a. item) as text or a hyperlink.
+1. Uses supported, nested plugin instances to incorporate extra features.
+      <details>
+
+      | feature | supported by |
+      | :- | :- |
+      | item key as hyperlink | [`taccsite_data_list`][dcms-link] |
+
+      </details>
 
 ## Caveats
 
