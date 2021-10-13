@@ -18,6 +18,39 @@ Caveats:
     - No protection from nesting caveats (whether is-wide or is-narrow takes precedence when one is nested inside the other).
     - Specific (yet semantic) markup is required to benefit from all features.
 
+Markup:
+<!-- D. List -->
+<dl class="c-data-list
+            c-data-list--is-vert
+            c-data-list--is-narrow
+            c-data-list--should-truncate-values">
+  <dt class="c-data-list__key">Name</dt>
+  <dd class="c-data-list__value">King</dd>
+  <dt class="c-data-list__key">Surname</dt>
+  <dd class="c-data-list__value">Kong</dd>
+  <dt class="c-data-list__key">Favorite Fruit</dt>
+  <dd class="c-data-list__value">Banana</dd>
+</dl>
+<!-- Table -->
+<table class="c-data-list
+              c-data-list--is-horz
+              c-data-list--is-wide">
+  <tbody>
+    <tr>
+      <th class="c-data-list__key">Name</th>
+      <td class="c-data-list__value">King</td>
+    </tr>
+    <tr>
+      <th class="c-data-list__key">Surname</th>
+      <td class="c-data-list__value">Kong</td>
+    </tr>
+    <tr>
+      <th class="c-data-list__key">Favorite Fruit</th>
+      <td class="c-data-list__value">Banana</td>
+    </tr>
+  </tbody>
+</table>
+
 .c-data-list--is-horz - (arrangement) A horizontal list
 .c-data-list--is-vert - (arrangement) A vertical list
 .c-data-list--is-narrow - (spacing) A list that has limited horizontal space
