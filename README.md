@@ -33,7 +33,7 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 
 ## Caveats
 
-- The provided styles are only a sample and are not suitable for all designs.
+1. The provided styles are only a sample and are not suitable for all designs.
 
   _Your app should override the template or stylesheet to load its own styles._
 
