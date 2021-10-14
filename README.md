@@ -19,8 +19,6 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 1. (Optional) Add and nest plugin instances for extra feature.
 1. See plugin render content that matches configuration and nested plugin instances.
 
-[dcms-link]: https://github.com/django-cms/djangocms-link
-
 ## Features
 
 1. Render a list/dictionary of data as `<table>` or `<dl>`.
@@ -38,3 +36,7 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 - The provided styles are only a sample and are not suitable for all designs.
 
   _Your app should override the template or stylesheet to load its own styles._
+
+
+
+[dcms-link]: https://github.com/django-cms/djangocms-link
