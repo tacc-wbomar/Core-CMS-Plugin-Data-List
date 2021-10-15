@@ -3,8 +3,9 @@
 
 This plugin renders a data dictionary as `<table>` or `<dl>`.
 
-- __`__plugin_name__`__: `taccsite_data_list`
-- __`__PluginName__`__: `TaccsiteDataList`
+- __`__dist-name__`__: `taccsite_data_list`
+- __`__package_name__`__: `taccsite_data_list`
+- __`__ClassName__`__: `TaccsiteDataList`
 - __"Plugin Name"__: "Data List"
 
 ## Quick Start
