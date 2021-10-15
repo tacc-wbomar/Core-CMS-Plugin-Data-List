@@ -3,8 +3,8 @@
 
 This plugin renders a data dictionary as `<table>` or `<dl>`.
 
-- __`__dist-name__`__: `taccsite_data_list`
-- __`__package_name__`__: `taccsite_data_list`
+- __`__dist-name__`__: `djangocms-tacc-data-list`
+- __`__package_name__`__: `djangocms_tacc_data_list`
 - __`__ClassName__`__: `TaccsiteDataList`
 - __"Plugin Name"__: "Data List"
 
@@ -28,7 +28,7 @@ This plugin renders a data dictionary as `<table>` or `<dl>`.
 
       | feature | supported by |
       | :- | :- |
-      | item key as hyperlink | [`taccsite_data_list`][dcms-link] |
+      | item key as hyperlink | [`djangocms_tacc_data_list`][dcms-link] |
 
       </details>
 
